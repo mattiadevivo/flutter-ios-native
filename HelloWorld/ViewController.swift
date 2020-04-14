@@ -32,6 +32,8 @@ class ViewController: UIViewController {
         let flutterEngine = (UIApplication.shared.delegate as! AppDelegate).flutterEngine
         let flutterViewController =
             FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
+        // Change visualization mode to fullscreen because the default one is in card.
+        flutterViewController.modalPresentationStyle = .fullScreen
         present(flutterViewController, animated: true, completion: nil)
     }
     
