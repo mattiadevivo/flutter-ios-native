@@ -1,5 +1,15 @@
 # Integrating Flutter inside iOS native application(Swift).
 
+## IMPORTANT
+After cloning the repository some **flutter files may be missing**:
+- Clone the repository and open the Xcode project using HelloWorld.xcworkspace
+- If compiler gives you some error about missing Flutter package do that:
+    - open with Android Studio flutter_module_ios project and run *flutter pub get* or *get dependencies* and check that flutter sdk is correctly set in project settings
+    - open terminal and go to the project root directory and run *pod install* to install all Xcode project
+    dependencies
+    - now open Xcode project using HelloWorld.xcworkspace.
+- This problem is due to some missing file in .ios directory inside flutter_module_ios.
+
 ## Simple guide for the integration.
 
 - Create a new Xcode project
@@ -22,9 +32,10 @@ end
 - From now you need to open the project using the *MyApp.xcworkspace* and every time Flutter plugin
 dependencies in *pubsec.yaml* get changed you need to run *flutter pub get* and then *pod install*.
 
-### CocoaPods (or Pod) commands
+## CocoaPods (or Pod) commands.
+
 A **pod** file contains references to libraries that must be include in the Xcode projects.
-- *pod init * to create a new Pod file
+- *pod init* to create a new Pod file
 - *open -a Xcode PodFile* to edit the Pod file
 - Add dependencies after *use_frameworks!* line, like this *pod 'Alamofire', '4.9.1'*
 - Run *pod install* in your project directory to install dependencies.
